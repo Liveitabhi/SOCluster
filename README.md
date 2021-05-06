@@ -10,9 +10,9 @@
 Developers rely on code documentation to understand the functionality of the code snippet. However, manually creating and maintaining the documentation is effort-intensive and prone to errors. 
 
 ## Working of SO*Cluster*:
-*COSPEX* is developed as a package for Atom using the following approach:
+SO*Cluster* can be divided into three main steps as shown:
 
-<img alt="approach" src="https://user-images.githubusercontent.com/35232831/99877164-24a16800-2c22-11eb-9012-5b70841c7216.jpeg">
+![Arch diagram Horizontal](https://user-images.githubusercontent.com/46972481/117248272-53706b00-ae5d-11eb-9ef6-252dbbf36304.png)
 
 1. 
 
@@ -36,3 +36,4 @@ You can find the walkthrough of the tool <a href="https://youtu.be/">here</a>
 
 ## How to contribute to SO*Cluster*:
 We will be very happy to receive any kind of contributions. Incase of a bug or an enhancement idea or a feature improvement idea, please open an issue or a pull request. Incase of any queries or if you would like to give any suggestions, please feel free to contact Abhishek Kumar (cs17b002@iittp.ac.in), Deep Ghadiyali (cs17b011@iittp.ac.in) or Sridhar Chimalakonda (ch@iittp.ac.in) of RISHA Lab, IIT Tirupati, India.
+
