@@ -1,20 +1,32 @@
 # SO*Cluster* - Towards Intent-based Clustering of Stack Overflow Questions using Graph-Based Approach
 
 ## What is SO*Cluster*?
-1. 
+1. SO*Cluster* is a tool based on Sentence-BERT vectorizer for creating *Intent*-clusters using a graph-based clustering algorithm.
+2. The current version clusters StackOverflow questions which do not contain any image, code-snippet or table involved.
+3. Support for image/code-snippet containing StackOverflow questions can be added to SO*Cluster* in the future.
 
 ## Features of SO*Cluster*:
-1. 
+1. SO*Cluster* uses *intent* as a key concept to cluster the StackOverflow questions.
+2. It uses a graph-based clustering algortihm. (State-of-the art clustering methods are often based on graphical representations of the relationships among data points [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/10302/10161">here</a>])
+3. It evaluates the clusters on three evaluation metrics - *Silhouette coefficient, Calinkski-Harabasz Index & Davies-Bouldin Index* as well as prints the spread of the clusters over different sizes.
 
 ## Uses of SO*Cluster*:
-Developers rely on code documentation to understand the functionality of the code snippet. However, manually creating and maintaining the documentation is effort-intensive and prone to errors. 
+There are many unanswered questions on StackOverflow. Main reasons behind more than 50% of these are *Failing to attract an expert member; Too short, hard to follow; and Duplicate question*.
+
+Developers can use SO*Cluster* to cluster the StackOverflow questions - including both answered and unanswered ones.
+
+These *Intent*-based clusters can be leveraged to answer unanswered questions using other answered questions in the same cluster.
+
+Also, SO*Cluster* evaluates these clusters which can tell how *good* the selected StackOveflow dataset is for our intended goal of Automatic Question Answering.
 
 ## Working of SO*Cluster*:
 SO*Cluster* can be divided into three main steps as shown:
 
 ![Arch diagram Horizontal](https://user-images.githubusercontent.com/46972481/117248272-53706b00-ae5d-11eb-9ef6-252dbbf36304.png)
 
-1. 
+1. Dataset Generation and Pre-processing
+2. Graph Construction
+3. Clustering
 
 
 ## Example Cluster:
