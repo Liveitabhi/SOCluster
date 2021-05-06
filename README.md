@@ -24,18 +24,21 @@ SO*Cluster* can be divided into three main steps as shown:
 
 ![Arch diagram Horizontal](https://user-images.githubusercontent.com/46972481/117248272-53706b00-ae5d-11eb-9ef6-252dbbf36304.png)
 
-1. Dataset Generation and Pre-processing
-2. Graph Construction
-3. Clustering
+1. **Dataset Generation and Pre-processing** :-
+    1. Data Dump - We downloaded SO post data from Stack-Exchange data dump archives [<a href="https://archive.org/download/stackexchange">link</a>]
+    2. Pre-processing - We filtered and pre-processed the database and ignored questions that contained *images, code-snippets, tables, etc*.
+    3. Feature Vectorization - We used *Sentence*-BERT to generate 768-dimensional feature vectors.
+2. **Graph Construction** :-
+    1. Similarity Index - SO*Cluster* uses cosine similarity as its metric to calculate the similairty between two vectors.
+    2. Graph generation - It creates a weighted undirected graph using the feature vectors obtained as nodes and cosine similarity between them as the edge weights.
+3. **Clustering** :-
+    In this step, SO*Cluster* uses a graph-based clustering algorithm which takes the weighted undirecteed graph as input and provides a set of clusters as output.
+    It uses threshold similarity as a parameter to invalidate those edges whose weight is less than the given threshold similarity.
+<img width=500 alt="Clustering Algorithm" src="https://user-images.githubusercontent.com/46972481/117269210-b79f2900-ae75-11eb-8dde-cec7cdf1ba12.JPG">
 
 
 ## Example Cluster:
-<figure>
-<img width=500 alt="Explanation" src="https://user-images.githubusercontent.com/35232831/117125604-616bb080-adb7-11eb-9048-c006557ab804.png">
-<figcaption>
-Part of the generated output for Quick Sort program. [A] is the expanded view of the first collapsible block and hence includes lower level information as well. [B] is the sliding-window interface for loops. [C] represent the high level information for the first recursive call. [H] shows the value returned by the function shown in [A]. [D] shows the arrows using which we can navigate through iterations of the loop.[E] highlights the line number of the corresponding line of code. [F] contains the line of code. [G] highlights our natural language description for the change in variables due to [F]. [I] shows the name of the file.
-</figcaption>
-</figure>
+
 
 ## What's inside SO*Cluster* Repository:
 
