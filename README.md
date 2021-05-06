@@ -34,7 +34,7 @@ SO*Cluster* can be divided into three main steps as shown:
 3. **Clustering** :-
     In this step, SO*Cluster* uses a graph-based clustering algorithm which takes the weighted undirecteed graph as input and provides a set of clusters as output.
     It uses threshold similarity as a parameter to invalidate those edges whose weight is less than the given threshold similarity.
-    ![clustering](https://user-images.githubusercontent.com/46972481/117269210-b79f2900-ae75-11eb-8dde-cec7cdf1ba12.JPG)
+<img width=500 alt="Clustering Algorithm" src="https://user-images.githubusercontent.com/46972481/117269210-b79f2900-ae75-11eb-8dde-cec7cdf1ba12.JPG">
 
 
 ## Example Cluster:
