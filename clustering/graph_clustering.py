@@ -18,6 +18,11 @@ locals().update(config_params)
 
 # Getting Question From MySQL Database
 # Change this part if you want to import questions from file or other database
+
+# username and password credential for connecting to MySQL database
+username = 'username'
+password = 'password'
+
 result, row_headers = utility.getInputQuestionSQL(username,password)
 
 q_arr = list()
