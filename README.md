@@ -65,7 +65,7 @@ The *result_script.sh* file is a bash script that can be used to reproduce the e
 9. You can also run the *result_script.sh* bash file to repeat the experiment done in the paper.
 
 ## Walkthrough:
-You can find the walkthrough of the tool <a href="https://youtu.be/">here</a>
+You can find the walkthrough of the tool <a href="https://youtu.be/uyn8ie4h3NY">here</a>
 
 ## How to contribute to SO*Cluster*:
 We will be very happy to receive any kind of contributions. Incase of a bug or an enhancement idea or a feature improvement idea, please open an issue or a pull request. Incase of any queries or if you would like to give any suggestions, please feel free to contact Abhishek Kumar (cs17b002@iittp.ac.in), Deep Ghadiyali (cs17b011@iittp.ac.in) or Sridhar Chimalakonda (ch@iittp.ac.in) of RISHA Lab, IIT Tirupati, India.
