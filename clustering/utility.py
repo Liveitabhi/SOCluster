@@ -15,7 +15,7 @@ def getInputQuestionSQL(username,password,tag_list,number_of_samples,host="local
     sql_tag_list = ["INSTR(Tags,'<" + x + ">') > 0" for x in tag_list]
     final_tag_condition = " || ".join(sql_tag_list)
 
-    sql = "SELECT * FROM Posts WHERE PostTypeId=1 AND (" + str(final_tag_condition) + ") LIMIT " + str(number_of_samples)
+    sql = "SELECT * FROM Posts WHERE PostTypeId=1 AND (" + str(final_tag_condition) + ") AND Body NOT LIKE '%<code>%' AND Body NOT LIKE '%<img>%' LIMIT " + str(number_of_samples)
 
     connection.execute(sql)
 
