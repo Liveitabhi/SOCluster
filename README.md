@@ -37,7 +37,7 @@ SO*Cluster* can be divided into three main steps as shown:
 <img width=500 alt="Clustering Algorithm" src="https://user-images.githubusercontent.com/46972481/117269210-b79f2900-ae75-11eb-8dde-cec7cdf1ba12.JPG">
 
 
-## Example Cluster :
+## Example Clusters generated through SO*Cluster* :
 - ![image](https://user-images.githubusercontent.com/46972481/117282080-fa66fe00-ae81-11eb-8633-91de69eab375.png)
 - ![image](https://user-images.githubusercontent.com/46972481/117282266-2b473300-ae82-11eb-9015-f5450a6e95a0.png)
 - ![image](https://user-images.githubusercontent.com/46972481/117282307-37cb8b80-ae82-11eb-9a1d-c056ae0c2ff6.png)
