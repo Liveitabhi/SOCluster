@@ -55,14 +55,14 @@ The *result_script.sh* file is a bash script that can be used to reproduce the e
 ## Steps to use SO*Cluster*:
 1. Download this repository in your local machine.
 2. Unzip the folder and extract it to a location of your choice on your PC.
-3. Also, download the StackOverflow data dump (only *Posts* zip file) from Stack Exchange archives in your PC.
+3. Also, download the StackOverflow data dump [<a href="https://archive.org/download/stackexchange">link</a>] (only *Posts* zip file) from Stack Exchange archives in your PC and extract it.
 4. Inside the SOCluster repository, go to *data/database_script.sql* file. There, provide the local path to the *Posts.xml* data dump file at appropriate location (in the end).
 5. Run the *database_script.sql* file.
 6. Now, go to *clustering/graph_clustering.py* file and provide your MySQL user credentials (username and password) at required place.
 7. Run the *graph_clustering.py* file using the command `python3 graph_clustering.py -n NUMBER_OF_QUES -t THRESHOLD_SIMILARITY --tag-list="[TAG1,TAG2,..]"`.
    A sample command would be `python3 graph_clustering.py -n 10000 -t 0.65 --tag-list="[javascript,python]"`.
 8. The clusters will be printed on your screen.
-9. You can also run the *result_script.sh* bash file to repeat the experiment done in tha paper.
+9. You can also run the *result_script.sh* bash file to repeat the experiment done in the paper.
 
 ## Walkthrough:
 You can find the walkthrough of the tool <a href="https://youtu.be/">here</a>
