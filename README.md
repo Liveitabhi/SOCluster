@@ -7,8 +7,8 @@
 
 ## Features of SO*Cluster*:
 1. SO*Cluster* uses *intent* as a key concept to cluster the StackOverflow questions.
-2. It uses a graph-based clustering algortihm. (State-of-the art clustering methods are often based on graphical representations of the relationships among data points [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/10302/10161">here</a>])
-3. It evaluates the clusters on three evaluation metrics - *Silhouette coefficient, Calinkski-Harabasz Index & Davies-Bouldin Index* as well as prints the spread of the clusters over different sizes.
+2. It uses a graph-based clustering algortihm. (State-of-the art clustering methods are often based on graphical representations of the relationships among data points [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/10302/10161">see here</a>])
+3. It evaluates the clusters on three evaluation metrics - *Silhouette coefficient, Calinkski-Harabasz Index & Davies-Bouldin Index*, as well as prints the spread of the clusters over different sizes.
 
 ## Uses of SO*Cluster*:
 There are many unanswered questions on StackOverflow. Main reasons behind more than 50% of these are *Failing to attract an expert member; Too short, hard to follow; and Duplicate question*.
@@ -17,7 +17,7 @@ Developers can use SO*Cluster* to cluster the StackOverflow questions - includin
 
 These *Intent*-based clusters can be leveraged to answer unanswered questions using other answered questions in the same cluster.
 
-Also, SO*Cluster* evaluates these clusters which can tell how *good* the selected StackOveflow dataset is for our intended goal of Automatic Question Answering.
+Also, SO*Cluster* evaluates these clusters to tell how *good* the selected StackOveflow dataset is for our intended goal of Automatic Question Answering.
 
 ## Working of SO*Cluster*:
 SO*Cluster* can be divided into three main steps as shown:
@@ -38,13 +38,31 @@ SO*Cluster* can be divided into three main steps as shown:
 
 
 ## Example Cluster:
+- ![image](https://user-images.githubusercontent.com/46972481/117282080-fa66fe00-ae81-11eb-8633-91de69eab375.png)
+- ![image](https://user-images.githubusercontent.com/46972481/117282266-2b473300-ae82-11eb-9015-f5450a6e95a0.png)
+- ![image](https://user-images.githubusercontent.com/46972481/117282307-37cb8b80-ae82-11eb-9a1d-c056ae0c2ff6.png)
 
+Here each image represents questions clustered by SO*Cluster* in the same cluster. Notice the similarity in the *intents* of the questions clustered together...
 
-## What's inside SO*Cluster* Repository:
+## Important files in SO*Cluster* Repository:
+Inside the data directory, "database_script.sql" file contains the code to handle the StackOverflow data dump and create well-organized SQL tables.
+
+Inside the *clustering* directory, "graph_clustering.py" script contains the source code of SO*Cluster* tool.
+
+The *result_script.sh* file is a bash script that can be used to reproduce the experiment done in the paper.
 
 
 ## Steps to use SO*Cluster*:
-1. 
+1. Download this repository in your local machine.
+2. Unzip the folder and extract it to a location of your choice on your PC.
+3. Also, download the StackOverflow data dump (only *Posts* zip file) from Stack Exchange archives in your PC.
+4. Inside the SOCluster repository, go to *data/database_script.sql* file. There, provide the local path to the *Posts.xml* data dump file at appropriate location (in the end).
+5. Run the *database_script.sql* file.
+6. Now, go to *clustering/graph_clustering.py* file and provide your MySQL user credentials (username and password) at required place.
+7. Run the *graph_clustering.py* file using the command `python3 graph_clustering.py -n NUMBER_OF_QUES -t THRESHOLD_SIMILARITY --tag-list="[TAG1,TAG2,..]"`.
+   A sample command would be `python3 graph_clustering.py -n 10000 -t 0.65 --tag-list="[javascript,python]"`.
+8. The clusters will be printed on your screen.
+9. You can also run the *result_script.sh* bash file to repeat the experiment done in tha paper.
 
 ## Walkthrough:
 You can find the walkthrough of the tool <a href="https://youtu.be/">here</a>
