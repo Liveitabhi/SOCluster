@@ -2,7 +2,7 @@ import mysql.connector as sqlc
 from sklearn.metrics import davies_bouldin_score, calinski_harabasz_score, silhouette_score
 
 # Input Question from MySQL Database
-def getInputQuestionSQL(username,password,host="localhost"):
+def getInputQuestionSQL(username,password,tag_list,number_of_samples,host="localhost"):
     mydb = sqlc.connect(
         host=host,
         user=username,
@@ -15,7 +15,7 @@ def getInputQuestionSQL(username,password,host="localhost"):
     sql_tag_list = ["INSTR(Tags,'<" + x + ">') > 0" for x in tag_list]
     final_tag_condition = " || ".join(sql_tag_list)
 
-    sql = "SELECT * FROM Posts WHERE PostTypeId=1 AND (" + str(final_tag_condition) + ") AND LENGTH(Body) <= " + str(max_body_length) + " LIMIT " + str(number_of_samples)
+    sql = "SELECT * FROM Posts WHERE PostTypeId=1 AND (" + str(final_tag_condition) + ") LIMIT " + str(number_of_samples)
 
     connection.execute(sql)
 
@@ -73,7 +73,7 @@ def getClusters(mat, nos,th):
     return cluster_set, labels
 
 # Printing Cluster Information
-def printCluster(clusters,details=False):
+def printCluster(clusters,q_arr,details=False,print_min_size=2):
     
     cluster_size_dict = dict({})
     for cluster in clusters:
@@ -84,10 +84,11 @@ def printCluster(clusters,details=False):
             cluster_size_dict[length] = 1
         if details:
             if(len(cluster) >= print_min_size):
+                print("\n<========================================   CLUSTER START   ==========================================================>\n")
                 for node in cluster:
                     print(node, " : ",q_arr[node])
                     print("--------------------------------------------------------------------------------------------------")
-                print("\n<==================================================================================================>\n")
+                print("\n<========================================   CLUSTER END   =========================================================>\n")
     
     print("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n")
     ("--------------------------------------------------------------------------------------------------")

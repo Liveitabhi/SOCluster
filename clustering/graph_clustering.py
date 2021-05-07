@@ -20,10 +20,10 @@ locals().update(config_params)
 # Change this part if you want to import questions from file or other database
 
 # username and password credential for connecting to MySQL database
-username = 'username'
-password = 'password'
+username = "username"
+password = "password"
 
-result, row_headers = utility.getInputQuestionSQL(username,password)
+result, row_headers = utility.getInputQuestionSQL(username,password,tag_list,number_of_samples)
 
 q_arr = list()
 
@@ -53,9 +53,10 @@ start = time.time()
 clusters, labels = utility.getClusters(similarity_index,len(embedding),threshold)
 end = time.time()
 print("Cluster Generation Time : ",end-start)
+print("--------------------------------------------------------------------------------------------------")
 
 # Printing Cluster Information
-utility.printCluster(clusters,details=enable_question_print)
+utility.printCluster(clusters,q_arr,details=enable_question_print,print_min_size=print_min_size)
 
 # Printing Evaluation Score
 utility.printScores(embedding,labels)
