@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS Posts (
     ContentLicense VARCHAR(12) NOT NULL
 );
 
-LOAD XML LOCAL INFILE '/LOCATION/TO/Posts.xml'
+LOAD XML LOCAL INFILE '../../Dataset/Posts.xml'
 INTO TABLE Posts
 ROWS identified BY '<row>';
 
-create index posts_idx_1 on posts(PostTypeId);
+create index posts_idx_1 on Posts(PostTypeId);

@@ -1,5 +1,6 @@
 from io import StringIO
 from html.parser import HTMLParser
+import re
 
 # Helper Class to parse HTML
 class MLStripper(HTMLParser):
@@ -32,10 +33,18 @@ class Question:
             html = self.question
         else:
             html = self.question["Body"]
+        
+        # Storing code snippets
+        self.code_snippets =  re.findall(r'<code>(.*?)</code>', html, re.DOTALL)
+        self.code_snippets = ' '.join(self.code_snippets)
+
+        # Removing code snippets from question text
+        html = re.sub(r'<code>.*?</code>', '', html, flags=re.DOTALL)
+
         s = MLStripper()
         s.feed(html)
         text = s.get_data()
         self.question_text = text
 
     def getText(self):
-        return self.question_text
+        return self.question_text, self.code_snippets
